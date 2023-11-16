@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ImgHoster - Home</title>
+    <link rel="stylesheet" href="style/main.css">
+</head>
+
+<body>
+    <h1>ImgHoster</h1>
+    <p>Self hosted image hosting made simple</p>
+    <div class="vertical">
+        <button id="uploadBtn">Upload</button>
+        <button id="galleryBtn">Gallery</button>
+    </div>
+
+    <script>
+        document.getElementById('uploadBtn').addEventListener('click', function() {
+            window.location.href = '/upload';
+        });
+
+        document.getElementById('galleryBtn').addEventListener('click', function() {
+            window.location.href = '/gallery';
+        });
+    </script>
+</body>
+
+</html>
