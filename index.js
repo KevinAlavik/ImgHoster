@@ -58,11 +58,15 @@ app.post("/upload", upload.single("file"), (req, res) => {
     <!DOCTYPE html>
     <html>
         <head>
-            <meta content="${uploadedFileName}" property="og:title" />
-            <meta content="${serverUrl + htmlFileName}" property="og:url" />
-            <meta content="${imageUrl}" property="og:image" />
-            <meta content="${embedColor}" data-react-helmet="true" name="theme-color" />
-            <style>
+	<meta property="og:title" content="${uploadedFileName}">
+	<meta property="og:url" content="${serverUrl + htmlFileName}">
+	<meta property="og:image" content="${imageUrl}">
+	<meta name="theme-color" content="${embedColor}" data-react-helmet="true">
+
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="${imageUrl}">
+
+	    <style>
                 body, html {
                     margin: 0;
                     height: 100%;
