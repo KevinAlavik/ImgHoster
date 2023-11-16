@@ -6,7 +6,7 @@ const { v4: uuidv4 } = require('uuid');
 
 const app = express();
 const port = 8008;
-const serverUrl = "https://files.melker.gay"
+const serverUrl = "https://files.melker.gay/"
 
 const embedColor = "#43B581"
 
@@ -27,7 +27,7 @@ function getPageAbsolutePath(name) {
 }
 
 function getUploadedImagePath(name) {
-    return `/images/${name}`;
+    return `images/${name}`;
 }
 
 function getUploadedPageAbsolutePath(name) {
@@ -58,14 +58,16 @@ app.post("/upload", upload.single("file"), (req, res) => {
     <!DOCTYPE html>
     <html>
         <head>
-	<meta property="og:title" content="${uploadedFileName}">
+        <meta property="og:title" content="${uploadedFileName}">
 	<meta property="og:url" content="${serverUrl + htmlFileName}">
 	<meta property="og:image" content="${imageUrl}">
-	<meta name="theme-color" content="${embedColor}" data-react-helmet="true">
+	<meta property="og:video" content="${imageUrl}">
+        <meta property="og:video:type" content="video/mp4">  <!-- Specify the video type -->
+        <meta name="theme-color" content="${embedColor}" data-react-helmet="true">
 
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:image" content="${imageUrl}">
-
+        <meta name="twitter:video" content="${imageUrl}">
 	    <style>
                 body, html {
                     margin: 0;
